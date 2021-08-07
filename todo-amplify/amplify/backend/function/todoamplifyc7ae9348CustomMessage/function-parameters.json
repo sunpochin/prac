@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "todoamplifyc7ae9348",
+  "functionName": "todoamplifyc7ae9348CustomMessage",
+  "resourceName": "todoamplifyc7ae9348CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "todoamplifyc7ae9348CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://mytodo.sbs/redirect/",
+  "EMAILSUBJECT": "hello apple oauth",
+  "EMAILMESSAGE": "",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}
