@@ -10,6 +10,18 @@
       "StackName": "amplify-todoamplify-dev-141525",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:789819000571:stack/amplify-todoamplify-dev-141525/de80b380-f746-11eb-ae89-06850023b7d0",
       "AmplifyAppId": "d1s6hbukwi9quv"
+    },
+    "categories": {
+      "function": {
+        "todoamplify56a3cedaCustomMessage": {
+          "REDIRECTURL": "https://mytodo.sbs/",
+          "EMAILSUBJECT": "mytodo account confirmation ",
+          "EMAILMESSAGE": "Hello thank you for registering"
+        }
+      },
+      "auth": {
+        "todoamplify56a3ceda": {}
+      }
     }
   }
 }

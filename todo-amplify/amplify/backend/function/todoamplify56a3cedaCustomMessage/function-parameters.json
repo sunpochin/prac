@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "todoamplify56a3ceda",
+  "functionName": "todoamplify56a3cedaCustomMessage",
+  "resourceName": "todoamplify56a3cedaCustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "todoamplify56a3cedaCustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://mytodo.sbs/",
+  "EMAILSUBJECT": "mytodo account confirmation ",
+  "EMAILMESSAGE": "Hello thank you for registering",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}
