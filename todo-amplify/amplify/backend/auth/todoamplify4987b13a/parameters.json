@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "todoamplify56a3ceda_identitypool_56a3ceda",
+    "identityPoolName": "todoamplify4987b13a_identitypool_4987b13a",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "todoam56a3ceda",
-    "userPoolName": "todoamplify56a3ceda_userpool_56a3ceda",
+    "resourceNameTruncated": "todoam4987b13a",
+    "userPoolName": "todoamplify4987b13a_userpool_4987b13a",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "todoam56a3ceda_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "todoam4987b13a_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "56a3ceda",
-    "resourceName": "todoamplify56a3ceda",
+    "sharedId": "4987b13a",
+    "resourceName": "todoamplify4987b13a",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -50,33 +50,14 @@
     },
     "useDefault": "defaultSocial",
     "hostedUI": true,
-    "triggers": "{\n  \"CustomMessage\": [\n    \"verification-link\"\n  ]\n}",
-    "hostedUIDomainName": "todoamplify56a3ceda-56a3ceda",
+    "hostedUIDomainName": "todoamplify4987b13a-4987b13a",
     "authProvidersUserPool": [
-        "Facebook",
         "Google"
     ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://mytodo.sbs/redirect/\"],\"LogoutURLs\":[\"https://mytodo.sbs/signout/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
-    "verificationBucketName": "todoamplify56a3cedaverificationbucket",
     "usernameCaseSensitive": false,
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"todoamplify56a3cedaCustomMessage\"\n  }\n]",
-    "breakCircularDependency": true,
-    "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "todoamplify56a3cedaCustomMessage",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
-    ]
+    "dependsOn": []
 }

@@ -1,26 +1,9 @@
 {
-  "function": {
-    "todoamplify56a3cedaCustomMessage": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
   "auth": {
-    "todoamplify56a3ceda": {
+    "todoamplify4987b13a": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "todoamplify56a3cedaCustomMessage",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        }
-      ],
+      "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "loginMechanism": [
@@ -49,7 +32,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authtodoamplify56a3ceda"
+              "userPoolId": "authtodoamplify4987b13a"
             }
           },
           "additionalAuthenticationProviders": []

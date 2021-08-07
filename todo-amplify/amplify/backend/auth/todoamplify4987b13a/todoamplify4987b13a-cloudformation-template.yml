@@ -10,18 +10,6 @@ Parameters:
     Type: String
 
   
-  
-  
-  functiontodoamplify56a3cedaCustomMessageArn:
-    Type: String
-    Default: functiontodoamplify56a3cedaCustomMessageArn
-  
-  functiontodoamplify56a3cedaCustomMessageName:
-    Type: String
-    Default: functiontodoamplify56a3cedaCustomMessageName
-  
-  
-  
 
     
   identityPoolName:
@@ -134,10 +122,6 @@ Parameters:
   hostedUI:
     Type: String
             
-  triggers:
-    Type: String
-  
-            
   hostedUIDomainName:
     Type: String
   
@@ -167,30 +151,10 @@ Parameters:
     Type: String
   
             
-  verificationBucketName:
-    Type: String
-  
-            
   
   usernameCaseSensitive:
     Type: String
             
-      
-  parentStack:
-    Type: String
-        
-  authTriggerConnections:
-    Type: String
-  
-            
-  
-  breakCircularDependency:
-    Type: String
-            
-        
-  permissions:
-    Type: CommaDelimitedList
-      
         
   dependsOn:
     Type: CommaDelimitedList
@@ -203,34 +167,13 @@ Conditions:
 
 Resources:
   
-  CustomMessageConfirmationBucket:
-    Type: AWS::S3::Bucket
-    DeletionPolicy: "Retain"
-    Properties:
-      BucketName:  !If [ShouldNotCreateEnvResources, !Ref verificationBucketName, !Join ['',[!Ref verificationBucketName, '-', !Ref env]]]
-      AccessControl: "Private"
-      WebsiteConfiguration:
-        IndexDocument: "index.html"
-        ErrorDocument: "index.html"
-      CorsConfiguration:
-        CorsRules:
-          -
-            AllowedHeaders:
-              - "Authorization"
-              - "Content-Length"
-            AllowedMethods:
-              - "GET"
-            AllowedOrigins:
-              - "*"
-            MaxAge: 3000
-  
   
   # BEGIN SNS ROLE RESOURCE
   SNSRole:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'todoam56a3ceda_sns-role', !Join ['',[ 'sns', '56a3ceda', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'todoam4987b13a_sns-role', !Join ['',[ 'sns', '4987b13a', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -242,10 +185,10 @@ Resources:
               - "sts:AssumeRole"
             Condition:
               StringEquals:
-                sts:ExternalId: todoam56a3ceda_role_external_id
+                sts:ExternalId: todoam4987b13a_role_external_id
       Policies:
         -
-          PolicyName: todoam56a3ceda-sns-policy
+          PolicyName: todoam4987b13a-sns-policy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
@@ -302,7 +245,7 @@ Resources:
       SmsAuthenticationMessage: !Ref smsAuthenticationMessage
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: todoam56a3ceda_role_external_id
+        ExternalId: todoam4987b13a_role_external_id
     
   
   UserPoolClientWeb:
@@ -310,7 +253,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: todoam56a3ceda_app_clientWeb
+      ClientName: todoam4987b13a_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -320,7 +263,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: todoam56a3ceda_app_client
+      ClientName: todoam4987b13a_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -331,7 +274,7 @@ Resources:
   # Created to execute Lambda which gets userpool app client config values
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', '56a3ceda', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', '4987b13a', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -385,7 +328,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: todoam56a3ceda_userpoolclient_lambda_iam_policy
+      PolicyName: todoam4987b13a_userpoolclient_lambda_iam_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -402,7 +345,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: todoam56a3ceda_userpoolclient_lambda_log_policy
+      PolicyName: todoam4987b13a_userpoolclient_lambda_log_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -812,7 +755,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties:
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'todoamplify56a3ceda_identitypool_56a3ceda', !Join ['',['todoamplify56a3ceda_identitypool_56a3ceda', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'todoamplify4987b13a_identitypool_4987b13a', !Join ['',['todoamplify4987b13a_identitypool_4987b13a', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient
