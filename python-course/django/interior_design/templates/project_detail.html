@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br><br><br>
+
+<div class="col-md-3">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ project.image.url }}" alt="Card image cap">
+    <div class="card-body">
+      <a href="{{ project.get_absolute_url }}">
+        <h5 class="card-title">{{project.title}}</h5>
+      </a>
+      <p class="card-text">{{ project.description }}
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

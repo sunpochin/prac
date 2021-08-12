@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+{% include 'head.html' %}
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  {% include 'nav.html'%}
+
+  {% block content %}
+  {% endblock content %}
+
+
+  {% include 'footer.html'%}
+  {% include 'scripts.html'%}
+</body>
+
+</html>
