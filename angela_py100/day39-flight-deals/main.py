@@ -36,7 +36,8 @@ sms_msg = 'hi pachinko'
 
 
 
-sheet_data = DataManager.getdata()["prices"]
+# sheet_data = DataManager.getdata()["prices"]
+
 pp = pprint.PrettyPrinter(width=38, compact=True)
 # pp.pprint("\n")
 # pp.pprint(prices)
@@ -45,7 +46,7 @@ for element in sheet_data:
     print("ele: ", element)
     iataCode = sear.getIATA(element)
     element["iataCode"] = iataCode
-    ret = DataManager.update(element)
+#    ret = DataManager.update(element)
 
     result = sear.searchFlight(element)
 

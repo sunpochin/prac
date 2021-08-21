@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdeac33c-74e8-47fe-a639-9ea6834a7b04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../andrewmead/n3-12-02-storing-passwords/web-server" beforeDir="false" afterPath="$PROJECT_DIR$/../../andrewmead/n3-12-02-storing-passwords/web-server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../aws-serverless-express" beforeDir="false" afterPath="$PROJECT_DIR$/../../aws-serverless-express" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../flaskchat" beforeDir="false" afterPath="$PROJECT_DIR$/../../flaskchat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../todolist-v2-starting-files" beforeDir="false" afterPath="$PROJECT_DIR$/../../todolist-v2-starting-files" afterDir="false" />
@@ -25,7 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../day45-bs4" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
