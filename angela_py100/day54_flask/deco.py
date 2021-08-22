@@ -1,8 +1,3 @@
-
-
-
-
-
 ## ********Day 54 Start**********
 ## Functions can have inputs/functionality/output
 def add(n1, n2):
@@ -95,17 +90,23 @@ def is_authenticated_decorator(funct):
     return wrapper
 
 def logging_decorator(funct):
-    def wrapper(*args):
-        print('funct: ', self.__name__)
-        print('args 0: ', args[0])
-        funct(self, args[0])
+    def wrapper(*args, **kwargs):
+        print('\n\nfunct name: ', funct.__name__)
+        for arg in kwargs:
+            print('kwarg: ', arg)
+        funct(args, kwargs)
     return wrapper
 
 def create_blos_post(user):
-    print('self: ', self.__name__)
+#    print('self: ', __name__)
     print(f"this is {user.name}'s new blog post.")
 
+@logging_decorator
+def hello_log(args, kargs):
+    print("args:", args, ", kargs: ", kargs)
 
 new_user = User("pac")
 new_user.is_logged_in = True
-create_blos_post(new_user)
+# create_blos_post(new_user)
+# theList = ["abc", "def"]
+hello_log(a="alpha", b="beta", c="gamma"  )
