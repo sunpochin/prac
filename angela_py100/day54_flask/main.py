@@ -1,47 +1,29 @@
-# This is a sample Python script.
+from flask import Flask, render_template
+import requests
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from flask import Flask
 app = Flask(__name__)
 
-import random
-print(random.__name__)
-print(__name__)
-
-def make_bold(funct):
-    def wrapper():
-        text = '<b>' + funct() + '</b>'
-        print('text: ', text)
-        return text
-    return wrapper
-
-def make_em(funct):
-    def wrapper():
-        text = '<em>' + funct() + '</em>'
-        print('text: ', text)
-        return text
-    return wrapper
-
-@app.route("/")
-def hello_world():
-    # print('hello world!')
-    return '<h1 style="text-align: center"> Hello, World! </h1>' \
-           '<p>This is a paragraph.</p>' \
-           '<img src="https://media.giphy.com/media/hvS1eKlR75hMr0l7VJ/giphy-downsized-large.gif?cid=ecf05e47h7dk9712qlycxt60wm4kvzgkti278lku24j2dqft&rid=giphy-downsized-large.gif&ct=g">'
-
-@app.route("/bye")
-@make_bold
-@make_em
-def bye():
-    return 'Bye Adios, Ciao, Au Revoir!'
+# posts = ""
+@app.route('/')
+def home():
+    url = "https://api.npoint.io/ed99320662742443cc5b"
+    response = requests.get(url)
+    print("response: ", response)
+    posts = response.json()
+    print("posts: ", posts)
+    return render_template("index.html", posts=posts)
 
 
-@app.route('/username/<name>/<int:number>')
-def greet(name, number):
-    return f'hello there {name}, you are {number} years old ! '
+@app.route('/blog/<num>')
+def get_post(num):
+    url = "https://api.npoint.io/ed99320662742443cc5b"
+    response = requests.get(url)
+    # print("response: ", response)
+    posts = response.json()
+    idx = int(num)
+    post = posts[idx - 1]
+    print("idx: ", idx, ", posts: ", posts, "\n, post: ", post)
+    return render_template("post.html", num=num, post=post)
 
 if __name__ == "__main__":
-#    hello_world()
     app.run(debug=True)
-

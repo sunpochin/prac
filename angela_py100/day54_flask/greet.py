@@ -1,8 +1,3 @@
-
-
-
-
-
 ## ********Day 54 Start**********
 ## Functions can have inputs/functionality/output
 def add(n1, n2):
@@ -101,11 +96,11 @@ def logging_decorator(funct):
         funct(self, args[0])
     return wrapper
 
-def create_blos_post(user):
-    print('self: ', self.__name__)
+def create_blog_post(user):
+#    print('self: ', self.__name__)
     print(f"this is {user.name}'s new blog post.")
 
 
 new_user = User("pac")
 new_user.is_logged_in = True
-create_blos_post(new_user)
+create_blog_post(new_user)
