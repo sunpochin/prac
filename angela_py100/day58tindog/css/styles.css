@@ -1,14 +1,63 @@
-h1 {
+body {
   font-family: "Montserrat";
-  font-size: 3rem;
-  line-height: 1.5;
-  font-weight: 900;
+}
+
+#title {
+  background-color: #ff4c68;
+  color: #fff;
 }
 
 .container-fluid {
   padding: 3% 15%;
 }
 
-#title {
-  background-color: #ff4c68;
+h1 {
+  font-family: "Montserrat";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+
+/* navigation bar */
+
+
+/* Fortune
+I figured out that's because of the order of the style sheets.
+Check out your index.html file, "css/styles.css" should be placed after the style-sheet by bootstrap
+In reverse, you will never get the styles.css file work 
+https://www.udemy.com/course/100-days-of-code/learn/lecture/22372366#questions/14044728
+*/
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+
+
+/* download Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+
+/* Title Image */
+
+.title-image {
+  width: 60%;
+  transform: rotate(35deg);
 }
