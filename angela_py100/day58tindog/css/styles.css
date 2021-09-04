@@ -12,9 +12,24 @@ body {
 }
 
 h1 {
-  font-family: "Montserrat";
-  font-size: 3.5rem;
+  font-family: 'Montserrat, sans-serif';
+  font-size: 3rem;
   line-height: 1.5;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "Montserrat-Bold";
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: "Montserrat-Bold";
+}
+
+p {
+  color: #8f8f8f;
 }
 
 
@@ -60,4 +75,43 @@ https://www.udemy.com/course/100-days-of-code/learn/lecture/22372366#questions/1
 .title-image {
   width: 60%;
   transform: rotate(35deg);
+}
+
+
+/* Features  */
+
+#features {
+  padding: 7% 15%;
+  text-align: center;
+}
+
+.feature-box {
+  padding: 5%;
+  vertical-align: middle;
+}
+
+.icon {
+  color: #ef8172;
+  margin: 15px 15px;
+}
+
+.icon:hover {
+  color: #ff4c68
+}
+
+
+/* testimonials */
+
+#testimonials {
+  padding: 7% 15%;
+  text-align: center;
+  background-color: #ef8172;
+  color: #fff
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  padding: 20px;
+  margin: 20px;
 }

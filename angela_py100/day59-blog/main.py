@@ -10,7 +10,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    footer = "this is a footer"
+    return render_template('index.html', footer=footer)
 
 @app.route("/about")
 def about():
