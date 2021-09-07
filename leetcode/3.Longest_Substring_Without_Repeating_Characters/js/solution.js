@@ -1,3 +1,54 @@
+// Given a string s, find the length of the longest substring without repeating characters.
+
+// without repeating: use set to detect repeating.
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let beg = 0, end = s.length;
+    let maxlong = ""
+    let maxlength = 0
+    for (let beg = 0; beg < end; beg++) {
+        theSet = new Set()
+        for (let it = beg; it < end; it++) {
+            if (!theSet.has(s[it])) {
+                theSet.add(s[it])
+                longest = s.substring(beg, it+1)
+                if (longest.length > maxlength) {
+                    maxlong = longest
+                    maxlength = longest.length
+                }
+                // console.log('longest: ', longest);
+            } else {
+                break;
+            }
+            // console.log('theSet: ', theSet);
+        }
+        // console.log('\n');
+    }
+    return maxlength;
+};
+
+s = "pwwkew"
+test = lengthOfLongestSubstring(s)
+console.log('test: ', test);
+
+// s = "abcabcbb"
+// s = "abcabcde"
+// a
+// ab
+// abc o
+// abca x
+// b
+// bc
+// bca o
+// bcab x
+
+// abcde
+
+
 /**
  * @param {string} s
  * @return {number}
