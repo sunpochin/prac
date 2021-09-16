@@ -55,7 +55,7 @@ function minimumSwaps(arr) {
     // console.log('theHash: ', theHash)
     let swaps = 0    
     for (let i = 0; i < arr.length; i++) {
-        while(arr[i] != i+1) {
+        if(arr[i] != i+1) {
             let change = arr[i] - 1
             let tmp = arr[i]
             arr[i] = arr[change]
