@@ -73,6 +73,7 @@ def login():
 
 
 @app.route('/secrets')
+@login_required
 def secrets():
     print(current_user.name)
     return render_template("secrets.html")
@@ -99,6 +100,7 @@ def logout():
 #     )
 
 @app.route('/download/<path:filename>')
+@login_required
 def download(filename):
     return send_from_directory(
         directory="static/files",
