@@ -37,6 +37,11 @@ def home():
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # if user already existed
+        if User.query.filter_by(email=request.form.get('email')).first():
+            flash("您已經註冊過了，請登入。")
+            return redirect(url_for('login'))
+
         hash_and_salted_password = generate_password_hash(
             request.form.get('password'),
             method='pbkdf2:sha256',
@@ -52,7 +57,6 @@ def register():
         db.session.commit()
 
         login_user(new_user)
-
         return redirect(url_for("secrets"))
 
     return render_template("register.html")
@@ -65,9 +69,17 @@ def login():
 
         user = User.query.filter_by(email=email).first()
 
-        if check_password_hash(user.password, password):
+        if not user:
+            flash("not valid user, 請重新輸入。")
+            return redirect(url_for('login'))
+        elif not check_password_hash(user.password, password):
+            # if password wrong
+            flash("密碼錯誤嘍，請重新輸入。")
+            return redirect(url_for('login'))
+        else:
             login_user(user)
             return redirect(url_for('secrets'))
+
 
     return render_template("login.html")
 
